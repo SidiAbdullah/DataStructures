@@ -1,0 +1,64 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class node
+{
+public:
+  int _num;
+  node *next = nullptr;
+  node *prev = nullptr;
+
+  node(int num)
+  {
+    _num = num;
+  }
+};
+
+// 1. CreateLinkedList
+node * CreateLinkedList(){
+  cout << "Enter this node value: ";
+  int value;
+  cin >> value;
+  node *n =  new node(value);
+  return n;
+}
+
+// 2. ReadLinkedList
+void ReadForwardLinkedList(node *n){
+  cout << "Forward direction: " << endl;
+  while(n != NULL){
+    cout << n->_num << "  ";
+    n = n->next;
+  }
+  cout << endl;
+}
+void ReadBackwardLinkedList(node *n){
+  cout << "backward direction: " << endl;
+  while(n != NULL){
+    cout << n->_num << "  ";
+    n = n->prev;
+  }
+  cout << endl;
+}
+
+// 3. UpdateLinkedListByInsert
+void UpdateLinkedListByInsert(node *n, int index = 2){
+  node * newNode;
+  cout << "Enter the new Node value: ";
+  cin >> newNode->_num;
+  n->next->next = newNode;
+  newNode->next = n->next->next->next;
+}
+
+// 4. DeleteLinkedList()
+
+// 5. countNodes()
+int countNodes(node * h){
+  int nodesCounter = 0;
+  while(h != NULL){
+    ++nodesCounter;
+    h = h->next;
+  }
+  return nodesCounter;
+}
