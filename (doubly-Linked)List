@@ -43,12 +43,11 @@ void ReadBackwardLinkedList(node *n){
 }
 
 // 3. UpdateLinkedListByInsert
-void UpdateLinkedListByInsert(node *n, int index = 2){
+void UpdateLinkedListByInsert(node *n, int index){
   node * newNode;
   cout << "Enter the new Node value: ";
   cin >> newNode->_num;
-  n->next->next = newNode;
-  newNode->next = n->next->next->next;
+  // still
 }
 
 // 4. DeleteLinkedList()
