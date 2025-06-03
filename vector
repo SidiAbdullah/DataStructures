@@ -1,0 +1,46 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// 1. createVector
+vector <int> vNumbers = {10, 20, 40};
+
+// 2. readVector()
+void readVector(vector <int> &vNums){
+  for (int i = 0; i < vNums.size(); i++){
+    cout << vNums[i] << "\n";
+  }
+}
+
+// 3. updateVector
+void updateVector(vector <int> &vNums, int index, int newValue){
+  vNums[index] = newValue;
+}
+
+// 4. deleteFromVector
+void deleteValueByIndex(vector <int> &vNums, int index){
+  vector <int> vNewNums;
+  for (int &num : vNums){
+    if (num != vNums[index]) vNewNums.push_back(num);
+  }
+  vNums = vNewNums;
+}
+void deleteValue(vector <int> &vNums, int value){
+  vector <int> vNewNums;
+  for (int &num : vNums){
+    if (num != value) vNewNums.push_back(num);
+  }
+  vNums = vNewNums;
+}
+
+int main(){
+  // vector <int> vNumbers = {10, 20, 40};
+  readVector(vNumbers);
+  cout << "#########################" << endl;
+  updateVector(vNumbers, 2, 30);
+  readVector(vNumbers);
+  cout << "#########################" << endl;
+  deleteValueByIndex(vNumbers, 0);
+  deleteValue(vNumbers, 30);
+  readVector(vNumbers);
+}
